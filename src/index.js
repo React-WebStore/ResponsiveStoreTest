@@ -2,11 +2,11 @@ import React from 'react'
 import App from './App'
 import { StateProvider } from './Services/context'
 
-function Store({ inventory }) {
+function Store(props) {
   return (
     <React.StrictMode>
       <StateProvider>
-        <App inventory={inventory} />
+        <App {...props} />
       </StateProvider>
     </React.StrictMode>
   )

@@ -27,3 +27,19 @@ export const CartQuantity = styled.div`
   position: absolute;
   background: red;
 `
+
+export const Checkout = styled.button`
+  background: black;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px black;
+  transition: 0.5s;
+
+  &:active {
+    box-shadow: none;
+  }
+`

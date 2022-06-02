@@ -1,16 +1,18 @@
-import styled from "styled-components";
-import { ItemContainer } from "./Components/Item/styles";
+import styled from 'styled-components'
+import { ItemContainer } from './Components/Item/styles'
 
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: 2s;
-`;
+  min-height: 25rem;
+  height: ${({ height }) => `${height}rem`};
+`
 
 export const Direction = styled.div`
   ${({ direction }) => {
-    return direction === "row"
+    return direction === 'row'
       ? `{
   display: flex;
   align-items: center;
@@ -20,7 +22,7 @@ export const Direction = styled.div`
   overflow: scroll;
   ${ItemContainer} {
     max-height: 30rem;
-    max-width: 30rem;
+    max-width: 20rem;
   }
 }`
       : `{
@@ -28,6 +30,6 @@ export const Direction = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 1rem;
   overflow: scroll;
-}`;
+}`
   }}
-`;
+`

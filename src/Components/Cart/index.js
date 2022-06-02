@@ -1,9 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { CartContainer, CartHeader } from './styles'
+import { CartContainer, CartHeader, Checkout } from './styles'
 
 import { contextState } from '../../Services/context'
 import CartItem from '../CartItem'
-const Cart = () => {
+const Cart = ({
+  checkout = (cart) => {
+    console.log(cart)
+  }
+}) => {
   const [isOpen, setOpen] = useState(false)
 
   const store = useContext(contextState)
@@ -39,6 +43,7 @@ const Cart = () => {
           {cart.map((item) => (
             <CartItem {...item} />
           ))}
+          <Checkout onClick={() => checkout(cart)}>Checkout</Checkout>
         </React.Fragment>
       )}
     </CartContainer>

@@ -4,7 +4,7 @@ import DirectionSelector from './Components/DirectionSelector'
 import Cart from './Components/Cart'
 import { contextState } from './Services/context'
 import { Wrapper, Direction } from './styles'
-const App = ({ inventory }) => {
+const App = ({ height, inventory, checkout }) => {
   const [direction, setDirection] = useState('column')
   const store = useContext(contextState)
   const { items } = store
@@ -24,8 +24,8 @@ const App = ({ inventory }) => {
   }, [])
 
   return (
-    <Wrapper>
-      <Cart />
+    <Wrapper height={height}>
+      <Cart checkout={checkout} />
       <DirectionSelector setDirection={setDirection} />
       <Direction direction={direction}>
         {items.map((item, i) => (

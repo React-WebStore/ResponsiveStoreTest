@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   box-shadow: 3px 3px 7px gray;
 `
 
