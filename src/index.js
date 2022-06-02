@@ -1,6 +1,14 @@
 import React from 'react'
-import styles from './styles.module.css'
+import App from './App'
+import { StateProvider } from './Services/context'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+function Store({ inventory }) {
+  return (
+    <React.StrictMode>
+      <StateProvider>
+        <App inventory={inventory} />
+      </StateProvider>
+    </React.StrictMode>
+  )
 }
+export default Store

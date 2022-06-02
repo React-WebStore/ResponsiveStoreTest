@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ExampleComponent } from 'responsive-store-react'
+import Store from 'responsive-store-react'
 import 'responsive-store-react/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Store />
 }
 
 export default App
