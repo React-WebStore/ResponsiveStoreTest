@@ -16,7 +16,6 @@ npm install --save responsive-store-react
 import React, { Component } from 'react'
 
 import MyComponent from 'responsive-store-react'
-import 'responsive-store-react/dist/index.css'
 
 class Example extends Component {
   render() {
