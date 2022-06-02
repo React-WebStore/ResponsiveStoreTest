@@ -26,7 +26,7 @@ const App = () => {
           <li>about</li>
         </ul>
       </div>
-      <Store height={50} inventory={arr} />
+      <Store height={30} inventory={arr} />
       <div>
         <p>footer</p>
       </div>

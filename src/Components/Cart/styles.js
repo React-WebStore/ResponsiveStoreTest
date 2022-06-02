@@ -6,7 +6,7 @@ export const CartContainer = styled.div`
   left: 1rem;
   display: grid;
   background: white;
-  max-height: 30rem;
+  max-height: ${({ height }) => (height ? `${height * 0.9}rem` : `30rem`)};
   gap: 1rem;
   padding: 0.7rem;
   border-radius: 0.5rem;
@@ -23,11 +23,6 @@ export const CartHeader = styled.div`
   transition: 2s;
 `
 
-export const CartQuantity = styled.div`
-  position: absolute;
-  background: red;
-`
-
 export const Checkout = styled.button`
   background: black;
   border: none;
@@ -42,4 +37,18 @@ export const Checkout = styled.button`
   &:active {
     box-shadow: none;
   }
+`
+
+export const CartQuantity = styled.div`
+  height: 20px;
+  width: 20px;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  margin: auto;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
 `

@@ -6,7 +6,8 @@ import CartItem from '../CartItem'
 const Cart = ({
   checkout = (cart) => {
     console.log(cart)
-  }
+  },
+  height
 }) => {
   const [isOpen, setOpen] = useState(false)
 
@@ -19,14 +20,15 @@ const Cart = ({
   }
 
   useEffect(() => {
-    const element = document.getElementsByClassName('sc-gKXOVf eGOJaV')[0]
+    const element = document.getElementById('cart')
+
     window.addEventListener('click', (e) => scrollToBottom(e, element))
     return window.removeEventListener('click', (e) =>
       scrollToBottom(e, element)
     )
   })
   return (
-    <CartContainer>
+    <CartContainer id='cart' height={height}>
       <CartHeader onClick={() => setOpen(!isOpen)}>
         {isOpen ? (
           <h3>Your Items</h3>

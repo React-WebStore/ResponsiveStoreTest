@@ -25,7 +25,7 @@ const App = ({ height, inventory, checkout }) => {
 
   return (
     <Wrapper height={height}>
-      <Cart checkout={checkout} />
+      <Cart checkout={checkout} height={height} />
       <DirectionSelector setDirection={setDirection} />
       <Direction direction={direction}>
         {items.map((item, i) => (
