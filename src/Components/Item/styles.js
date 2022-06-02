@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   box-shadow: 3px 3px 7px gray;
 `
 
 export const TextBox = styled.div`
   display: flex;
+  margin-top: auto;
   justify-content: space-around;
   align-items: center;
 `
@@ -16,7 +16,7 @@ export const TextBox = styled.div`
 export const Image = styled.img`
   min-height: 10rem;
   min-width: 10rem;
-  margin: 0.5rem;
+  margin: auto 0.5rem;
 `
 
 export const AddToCart = styled.div`
