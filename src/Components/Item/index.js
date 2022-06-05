@@ -6,7 +6,8 @@ const Item = ({
   uuid,
   img = 'https://firebasestorage.googleapis.com/v0/b/planup-d79a0.appspot.com/o/2016-09-06-what-is-a-product.webp?alt=media&token=f6c25a81-8f09-4401-b274-029baff6b96a',
   title = 'title',
-  price = 10
+  price = 10,
+  setOpen
 }) => {
   const store = useContext(contextState)
 
@@ -30,9 +31,14 @@ const Item = ({
     return store.dispatch({ type: 'addToCart', payload: newCart })
   }
 
+  const openModal = (uuid) => {
+    store.dispatch({ type: 'addToModal', payload: uuid })
+    setOpen(true)
+  }
+
   return (
     <ItemContainer>
-      <Image src={img}></Image>
+      <Image onClick={() => openModal(uuid)} src={img} />
       <TextBox>
         <h1>{title}</h1>
         <h3>${price}</h3>

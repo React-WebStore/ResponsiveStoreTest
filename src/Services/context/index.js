@@ -1,35 +1,40 @@
-import React, { createContext, useReducer } from "react";
-import { uuidv4 } from "../../utils";
+import React, { createContext, useReducer } from 'react'
+import { uuidv4 } from '../../utils'
 
-const initialState = { items: [], cart: [] };
-export const contextState = createContext(initialState);
-const { Provider } = contextState;
+const initialState = { items: [], cart: [], modal: {} }
+export const contextState = createContext(initialState)
+const { Provider } = contextState
 export const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
-      case "initializeInventory":
+      case 'initializeInventory':
         const items = action.payload.map((item) => ({
           ...item,
-          uuid: uuidv4(),
-        }));
+          uuid: uuidv4()
+        }))
 
         return Object.assign({}, state, {
-          items,
-        });
-      case "dumpInventory":
-        return Object.assign({}, state, initialState);
-      case "addToCart":
+          items
+        })
+      case 'dumpInventory':
+        return Object.assign({}, state, initialState)
+      case 'addToCart':
         return Object.assign({}, state, {
-          cart: action.payload,
-        });
-      case "removeFromCart":
+          cart: action.payload
+        })
+      case 'removeFromCart':
         return Object.assign({}, state, {
-          cart: state.cart.filter((item) => item.uuid !== action.payload),
-        });
+          cart: state.cart.filter((item) => item.uuid !== action.payload)
+        })
+      case 'addToModal': {
+        return Object.assign({}, state, {
+          modal: state.items.filter((item) => item.uuid === action.payload)[0]
+        })
+      }
       default:
-        throw new Error();
+        throw new Error()
     }
-  }, initialState);
+  }, initialState)
 
-  return <Provider value={{ ...state, dispatch }}>{children}</Provider>;
-};
+  return <Provider value={{ ...state, dispatch }}>{children}</Provider>
+}
