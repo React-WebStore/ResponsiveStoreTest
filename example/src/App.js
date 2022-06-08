@@ -1,8 +1,11 @@
 import React from 'react'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import Home from './Pages/Home'
+import About from './Pages/About'
 import Store from 'responsive-store-react'
-import 'responsive-store-react/dist/index.css'
-
+import { Container } from './styles'
 const App = () => {
   const arr1 = new Array(10)
   const arr2 = new Array(10)
@@ -18,19 +21,17 @@ const App = () => {
 
   const arr = [...arr1, ...arr2, ...arr3]
   return (
-    <>
-      <div>
-        <ul>
-          <li>home</li>
-          <li>shop</li>
-          <li>about</li>
-        </ul>
-      </div>
-      <Store height={30} inventory={arr} />
-      <div>
-        <p>footer</p>
-      </div>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Container>
+        <Routes>
+          <Route exact path='Home' element={<Home />} />
+          <Route path='About' element={<About />} />
+          <Route path='Store' element={<Store height={30} inventory={arr} />} />
+        </Routes>
+      </Container>
+      <Footer />
+    </BrowserRouter>
   )
 }
 
