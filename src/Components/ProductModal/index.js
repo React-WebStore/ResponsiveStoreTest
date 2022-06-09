@@ -7,8 +7,6 @@ const ProductModal = ({ isOpen = false, setOpen }) => {
   const { modal } = useContext(contextState)
   const { title, price, img } = modal
 
-  console.log({ modal })
-
   const outsideClick = (e) => {
     const container = document.getElementById('product-container')
     if (e.target === container) {

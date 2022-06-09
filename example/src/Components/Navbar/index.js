@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
 
-const pages = ['Home', 'About', 'Store']
+const pages = ['Store1', 'Store2', 'Store3']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 const Navbar = () => {
@@ -163,9 +163,3 @@ const Navbar = () => {
   )
 }
 export default Navbar
-
-{
-  /* <Link to='/'>Home</Link>
-<Link to='about'>About</Link>
-<Link to='shop'>Store</Link> */
-}

@@ -3,12 +3,7 @@ import { CartContainer, CartHeader, Checkout } from './styles'
 
 import { contextState } from '../../Services/context'
 import CartItem from '../CartItem'
-const Cart = ({
-  checkout = (cart) => {
-    console.log(cart)
-  },
-  height
-}) => {
+const Cart = ({ checkout = () => {}, height }) => {
   const [isOpen, setOpen] = useState(false)
 
   const store = useContext(contextState)

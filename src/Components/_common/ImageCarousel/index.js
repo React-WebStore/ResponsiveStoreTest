@@ -6,7 +6,6 @@ const ImageCarousel = ({ images = [] }) => {
     <ImageCouraselContainer>
       <Button
         onClick={() => {
-          console.log('imageIndex', imageIndex, 'images', images.length)
           imageIndex > 0 && setIndex(imageIndex - 1)
         }}
       >
@@ -15,7 +14,6 @@ const ImageCarousel = ({ images = [] }) => {
       <Image src={images[imageIndex]} />
       <Button
         onClick={() => {
-          console.log('imageIndex', imageIndex, 'images', images.length)
           imageIndex < images.length - 1 && setIndex(imageIndex + 1)
         }}
       >

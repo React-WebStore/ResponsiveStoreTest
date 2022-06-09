@@ -5,8 +5,14 @@ import Cart from './Components/Cart'
 import { contextState } from './Services/context'
 import { Wrapper, Direction } from './styles'
 import ProductModal from './Components/ProductModal'
-const App = ({ height, inventory, checkout }) => {
-  const [direction, setDirection] = useState('column')
+const App = ({
+  height,
+  inventory,
+  checkout,
+  dir = 'column',
+  showDirection = true
+}) => {
+  const [direction, setDirection] = useState(dir)
   const [productModal, setProductModal] = useState(false)
   const store = useContext(contextState)
   const { items } = store
@@ -29,7 +35,7 @@ const App = ({ height, inventory, checkout }) => {
     <React.Fragment>
       <Wrapper height={height}>
         <Cart checkout={checkout} height={height} />
-        <DirectionSelector setDirection={setDirection} />
+        {showDirection && <DirectionSelector setDirection={setDirection} />}
         <Direction direction={direction}>
           {items.map((item, i) => (
             <Item {...item} setOpen={setProductModal} key={i} />

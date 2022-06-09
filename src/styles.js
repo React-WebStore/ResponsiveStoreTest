@@ -20,6 +20,7 @@ export const Direction = styled.div`
   padding: 1rem;
   margin: auto 0;
   overflow: scroll;
+  max-width: 100vw;
   ${ItemContainer} {
     max-height: 30rem;
     max-width: 20rem;
