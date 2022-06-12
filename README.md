@@ -15,11 +15,11 @@ npm install --save responsive-store-react
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'responsive-store-react'
+import Store from 'responsive-store-react'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Store />
   }
 }
 ```
