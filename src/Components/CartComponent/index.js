@@ -3,7 +3,7 @@ import { CartContainer, CartHeader, Checkout } from './styles'
 
 import { cartState } from '../../Services/cart'
 import CartItem from '../CartItem'
-const CartComponent = ({ checkout = () => {}, height, showCart = true }) => {
+const CartComponent = ({ checkout = () => {}, height }) => {
   const [isOpen, setOpen] = useState(false)
 
   const cartContext = useContext(cartState)
@@ -14,6 +14,7 @@ const CartComponent = ({ checkout = () => {}, height, showCart = true }) => {
     return element.scroll({ top: element.scrollHeight, behavior: 'smooth' })
   }
 
+  console.log(checkout)
   useEffect(() => {
     const element = document.getElementById('cart')
 

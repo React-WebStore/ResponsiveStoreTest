@@ -13,17 +13,19 @@ npm install --save responsive-store-react
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import Store from 'responsive-store-react'
+import Store, { Cart } from 'responsive-store-react'
 
-class Example extends Component {
-  render() {
-    return <Store />
+const MyStore = () => ()
+    <div>
+      <Cart>
+        <Store inventory={[]} />
+      </Cart>
+    </div>
   }
 }
 ```
-
 
 # React Responsive Web Store
 
@@ -31,12 +33,12 @@ Hi reader,
 
 I have created this repository because I have been developing web stores for the past 3 years.
 I've never found a great NPM package for running a store utilizing React.
-I know there are propably a million other tools for creating a webstore but I wanted to create one 
+I know there are propably a million other tools for creating a webstore but I wanted to create one
 that can be integrated with any stack.
 
 A single package that provides you a database to store your items, an analytics dashboard and a one stop shop for your webstore.
 
-The idea is to have a shippable NPM package for a store, an admin portal with analytics showing you which products are the best sellers, 
+The idea is to have a shippable NPM package for a store, an admin portal with analytics showing you which products are the best sellers,
 integration with major website like Amazon, Ebay, FB marketplace so you can push out products to all of your channels at the same time.
 Keep track of your inventory and see reviews on your products from several different sources.
 
@@ -45,9 +47,8 @@ Start conquering the ecommerce world with React.
 
 # Access
 
-If you would like access to contribute to this repository please join the discord channel [RWS](https://discord.gg/NAZzpTDq) and 
+If you would like access to contribute to this repository please join the discord channel [RWS](https://discord.gg/NAZzpTDq) and
 I will add you to the contributors list as soon as possible.
-
 
 # Trello Board
 
@@ -76,6 +77,7 @@ The file structure is as follows:
 Components -- ComponentName -- index.js
                             -- styles.js
 ```
+
 Please stick to the convention to have to codebase be as holistic as possible.
 
 We have a Utils folder which is used for Hooks.

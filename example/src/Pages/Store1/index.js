@@ -4,7 +4,11 @@ import Store, { Cart } from 'responsive-store-react'
 const Store1 = ({ inventory = {} }) => {
   return (
     <StoreContainer>
-      <Cart>
+      <Cart
+        checkout={() => {
+          console.log('hello World')
+        }}
+      >
         <h1>Medicine</h1>
         <Store
           dir='row'
