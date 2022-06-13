@@ -12,6 +12,7 @@ export const CartContainer = styled.div`
   border-radius: 0.5rem;
   overflow: scroll;
   box-shadow: 2px 4px 5px black;
+  z-index: 1;
 `
 
 export const CartHeader = styled.div`
@@ -37,18 +38,4 @@ export const Checkout = styled.button`
   &:active {
     box-shadow: none;
   }
-`
-
-export const CartQuantity = styled.div`
-  height: 20px;
-  width: 20px;
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-  margin: auto;
-  background: red;
-  border-radius: 50%;
-  position: absolute;
-  top: -0.6rem;
-  right: -0.6rem;
 `

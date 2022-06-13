@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { CartContainer, CartHeader, Checkout } from './styles'
 
-import { contextState } from '../../Services/context'
+import { cartState } from '../../Services/cart'
 import CartItem from '../CartItem'
-const Cart = ({ checkout = () => {}, height }) => {
+const CartComponent = ({ checkout = () => {}, height, showCart = true }) => {
   const [isOpen, setOpen] = useState(false)
 
-  const store = useContext(contextState)
-  const { cart } = store
+  const cartContext = useContext(cartState)
+  const { cart } = cartContext
 
   const scrollToBottom = (e, element) => {
     if (e.path.includes(element)) return
@@ -37,8 +37,8 @@ const Cart = ({ checkout = () => {}, height }) => {
       </CartHeader>
       {isOpen && (
         <React.Fragment>
-          {cart.map((item) => (
-            <CartItem {...item} />
+          {cart.map((item, i) => (
+            <CartItem key={i} {...item} />
           ))}
           <Checkout onClick={() => checkout(cart)}>Checkout</Checkout>
         </React.Fragment>
@@ -47,4 +47,4 @@ const Cart = ({ checkout = () => {}, height }) => {
   )
 }
 
-export default Cart
+export default CartComponent

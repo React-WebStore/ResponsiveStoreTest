@@ -1,17 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Item from './Components/Item'
 import DirectionSelector from './Components/DirectionSelector'
-import Cart from './Components/Cart'
 import { contextState } from './Services/context'
 import { Wrapper, Direction } from './styles'
 import ProductModal from './Components/ProductModal'
-const App = ({
-  height,
-  inventory,
-  checkout,
-  dir = 'column',
-  showDirection = true
-}) => {
+const App = ({ height, inventory, dir = 'column', showDirection = true }) => {
   const [direction, setDirection] = useState(dir)
   const [productModal, setProductModal] = useState(false)
   const store = useContext(contextState)
@@ -34,7 +27,6 @@ const App = ({
   return (
     <React.Fragment>
       <Wrapper height={height}>
-        <Cart checkout={checkout} height={height} />
         {showDirection && <DirectionSelector setDirection={setDirection} />}
         <Direction direction={direction}>
           {items.map((item, i) => (

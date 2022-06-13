@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { contextState } from '../../Services/context'
+import { cartState } from '../../Services/cart'
 import Quantity from '../Quantity'
 import { CartItemContainer, CartText, CartImage, Remove } from './styles'
 const CartItem = ({
@@ -9,7 +9,7 @@ const CartItem = ({
   uuid,
   img = 'https://firebasestorage.googleapis.com/v0/b/planup-d79a0.appspot.com/o/2016-09-06-what-is-a-product.webp?alt=media&token=f6c25a81-8f09-4401-b274-029baff6b96a'
 }) => {
-  const store = useContext(contextState)
+  const store = useContext(cartState)
 
   const removeFromCart = (uuid) => {
     store.dispatch({ type: 'removeFromCart', payload: uuid })
