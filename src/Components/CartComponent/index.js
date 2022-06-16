@@ -14,7 +14,6 @@ const CartComponent = ({ checkout = () => {}, height }) => {
     return element.scroll({ top: element.scrollHeight, behavior: 'smooth' })
   }
 
-  console.log(checkout)
   useEffect(() => {
     const element = document.getElementById('cart')
 

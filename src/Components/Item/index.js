@@ -32,8 +32,6 @@ const Item = ({
       newCart.push(itemToAdd)
     }
 
-    console.log({ newCart })
-
     return cartContext.dispatch({ type: 'addToCart', payload: newCart })
   }
 

@@ -5,12 +5,7 @@ const retrieve = JSON.parse(localStorage.getItem('cart'))
 const initialState = retrieve || { cart: [] }
 export const cartState = createContext(initialState)
 const { Provider } = cartState
-export const Cart = ({
-  children,
-  checkout = (props) => {
-    console.log(props)
-  }
-}) => {
+export const Cart = ({ children, checkout = () => {} }) => {
   const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case 'addToCart':
@@ -26,7 +21,6 @@ export const Cart = ({
     }
   }, initialState)
 
-  console.log(checkout())
   localStorage.setItem('cart', JSON.stringify(state))
 
   return (
