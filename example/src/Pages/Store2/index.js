@@ -6,7 +6,7 @@ const Store2 = ({ inventory = [] }) => (
   <StoreContainer>
     <Cart>
       <h1>Store</h1>
-      <Store inventory={inventory} />
+      <Store inventory={[{ name: 'Patrick', price: 15 }]} />
     </Cart>
   </StoreContainer>
 )

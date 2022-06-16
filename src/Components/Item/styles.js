@@ -4,6 +4,8 @@ export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: 3px 3px 7px gray;
+  max-height: 30rem;
+  max-width: 40rem;
 `
 
 export const TextBox = styled.div`
